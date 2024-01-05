@@ -1,0 +1,17 @@
+test> use firas
+switched to db firas
+firas> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+firas> db.createCollection("testTechnique")
+{ ok: 1 }
+firas> db.testTechnique.insertOne({"id":1,"statut":"actif"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('659875b0c7f01d19c6089342')
+}
+firas> db.testTechnique.find({statut: "actif"})
+[
+  { _id: ObjectId('659875b0c7f01d19c6089342'), id: 1, statut: 'actif' }
+]
